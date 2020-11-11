@@ -1,0 +1,47 @@
+<section class="container">
+  <form class="mb-6" action="">
+    <h1 class="title">Create Student</h1>
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <input class="input" type="text" [(ngModel)]="name" name="name" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Age</label>
+      <div class="control">
+        <input class="input" type="number" [(ngModel)]="age" name="age" />
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Address</label>
+      <div class="control">
+        <input class="input" type="text" [(ngModel)]="address" name="address" />
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="button is-primary" (click)="createRecord()">
+        Guardar
+      </button>
+    </div>
+  </form>
+
+  <div class="columns is-multiline">
+    <div *ngFor="let student of students" class="column is-3">
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">Student</p>
+              <p class="subtitle is-6">{{ student.name }}</p>
+            </div>
+          </div>
+          <div class="content">
+            Age: {{ student.age }} <br />
+            Address: {{ student.address }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
